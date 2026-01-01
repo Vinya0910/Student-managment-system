@@ -1,0 +1,72 @@
+body {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    background: #f3f4f6;
+}
+
+.marks-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.marks-card {
+    width: 420px;
+    padding: 30px;
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    text-align: center;
+}
+
+.marks-card h2 {
+    margin: 0;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.marks-list {
+    margin-top: 10px;
+}
+
+.mark-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.mark-item strong {
+    color: #1f2937;
+}
+
+.marks-card h3 {
+    margin-top: 15px;
+    font-size: 20px;
+    color: #2563eb;
+}
+
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 18px;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-back:hover {
+    background: #1e4ed8;
+}
+
+.animate {
+    animation: pop 0.5s ease;
+}
+
+@keyframes pop {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

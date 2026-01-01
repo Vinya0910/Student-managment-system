@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Profile — MySchool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/student.css">
+</head>
+
+<body>
+
+<div class="profile-wrapper">
+
+    <div class="profile-card animate-card">
+
+        <!-- ⭐ ANIMATED CARTOON STUDENT AVATAR -->
+        <div class="student-avatar-container">
+            <img 
+                src="https://img.icons8.com/color/200/student-male.png"
+                alt="Student Avatar"
+                class="student-avatar-pic"
+            >
+        </div>
+
+        <h1><%= student.name %></h1>
+
+        <div class="info">
+            <p><strong>ID:</strong> <%= student.id %></p>
+            <p><strong>Name:</strong> <%= student.name %></p>
+            <p><strong>Email:</strong> <%= student.email %></p>
+            <p><strong>Department:</strong> <%= student.department %></p>
+            <p><strong>Courses:</strong> <%= student.courses %></p>
+        </div>
+<a href="/student-view-marks/<%= student.id %>" class="btn-back">
+    View My Marks
+</a>
+
+
+
+        <a href="/login" class="btn-back">Back</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

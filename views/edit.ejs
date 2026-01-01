@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Student — MySchool</title>
+  <link rel="stylesheet" href="/edit.css">
+</head>
+<body>
+
+<div class="edit-wrapper">
+  <div class="edit-card">
+    <h2>Edit Student</h2>
+
+    <!-- Use the 'student' object passed by the route -->
+    <form action="/update/<%= student.id %>" method="POST">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" name="name" value="<%= student.name %>" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" value="<%= student.email %>" required>
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="text" name="password" value="<%= student.password %>" required>
+      </div>
+
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" name="department" value="<%= student.department %>" required>
+      </div>
+
+      <div class="form-group">
+        <label>Courses</label>
+        <input type="text" name="courses" value="<%= student.courses || '' %>" placeholder="Comma separated: DBMS, OOPS">
+      </div>
+
+      <button type="submit" class="btn-save">Update</button>
+    </form>
+
+  </div>
+</div>
+
+</body>
+</html>

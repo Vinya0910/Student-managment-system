@@ -1,0 +1,125 @@
+body {
+  background: #e9f1ff;
+  font-family: Arial;
+}
+
+/* Center wrapper */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+}
+
+/* Main card */
+.card {
+  width: 750px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  animation: fadeIn .45s ease-in-out;
+}
+
+h2 {
+  text-align: center;
+  color: #003c8f;
+  margin-bottom: 10px;
+}
+
+/* Student info box */
+.details-box {
+  background: #f4f8ff;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+  border-left: 4px solid #006eff;
+}
+
+.details-box p {
+  margin: 6px 0;
+}
+
+/* Table styling */
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.styled-table th {
+  background: #006eff;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.styled-table td {
+  padding: 10px;
+  background: #f7faff;
+  border-bottom: 1px solid #dbe6ff;
+}
+
+/* Buttons */
+.btn-edit {
+  padding: 6px 12px;
+  background: #0a6bff;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 6px;
+  transition: 0.2s;
+}
+
+.btn-edit:hover {
+  background: #004ecc;
+}
+
+.btn-delete {
+  padding: 6px 12px;
+  background: #ff3232;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-delete:hover {
+  background: #d60000;
+}
+
+.btn-add {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #0076ff;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-right: 10px;
+  transition: 0.2s;
+}
+
+.btn-add:hover {
+  background: #005bd1;
+}
+
+.btn-back {
+  display: inline-block;
+  padding: 10px 16px;
+  background: #444;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.btn-back:hover {
+  background: #222;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login — MySchool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/login.css">
+
+    <!-- Disable autofill globally -->
+    <meta name="google" content="notranslate">
+</head>
+
+<body>
+
+<h1 class="title">EduTrack — Student Monitoring System</h1>
+
+<div class="login-wrapper">
+    <div class="login-card">
+
+        <h2>Welcome Back</h2>
+        <p class="subtitle">Sign in to continue</p>
+
+        <form action="/login" method="POST" autocomplete="off">
+
+            <!-- ★ Fake hidden fields to trick Chrome autofill -->
+            <input type="text" style="display:none">
+            <input type="password" style="display:none">
+
+            <!-- REAL EMAIL (renamed so Chrome ignores it) -->
+            <label>Email</label>
+            <input 
+                type="text" 
+                name="email" 
+                placeholder="Enter email"
+                autocomplete="off"
+                required
+            >
+
+            <!-- REAL PASSWORD (Chrome will NOT detect it as a password field) -->
+            <label>Password</label>
+            <input 
+                type="text" 
+                name="password" 
+                placeholder="Enter password"
+                autocomplete="new-password"
+                required
+                onfocus="this.type='password'"
+            >
+
+            <button type="submit" class="btn-login">Login</button>
+
+        </form>
+
+    </div>
+</div>
+
+</body>
+</html>

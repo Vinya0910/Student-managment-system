@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Edit Marks</title>
+  <link rel="stylesheet" href="/edit-marks.css">
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="card">
+    <h2>Edit Marks</h2>
+
+    <% if (mark) { %>
+
+    <form action="/edit-marks/<%= studentId %>/<%= mark.id %>?email=<%= teacherEmail %>" method="POST">
+
+      <!-- teacherEmail must be sent back to server -->
+      <input type="hidden" name="teacherEmail" value="<%= teacherEmail %>">
+
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" name="subject" value="<%= mark.subject %>" required>
+      </div>
+
+      <div class="form-group">
+        <label>Marks (0–100)</label>
+        <input type="number" name="marks" value="<%= mark.marks %>" min="0" max="100" required>
+      </div>
+
+      <button class="btn-save" type="submit">Update</button>
+    </form>
+
+    <% } else { %>
+      <p>No record found</p>
+    <% } %>
+
+    <a href="/student-marks/<%= studentId %>?email=<%= teacherEmail %>" class="btn-back">Back</a>
+
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Marks — <%= student.name %></title>
+  <link rel="stylesheet" href="/marks-list.css">
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="card">
+    <h2>Marks — <%= student.name %></h2>
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Marks</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% marks.forEach(m => { %>
+        <tr>
+          <td><%= m.subject %></td>
+          <td><%= m.marks %></td>
+
+          <td>
+            <!-- EDIT -->
+            <a class="btn-edit"
+               href="/edit-marks/<%= student.id %>/<%= m.id %>?email=<%= teacherEmail %>">
+               Edit
+            </a>
+
+            <!-- DELETE -->
+            <form action="/delete-marks/<%= student.id %>/<%= m.id %>?email=<%= teacherEmail %>" 
+                  method="POST"
+                  style="display:inline-block;"
+                  onsubmit="return confirm('Delete this marks entry?');">
+
+              <input type="hidden" name="teacherEmail" value="<%= teacherEmail %>">
+
+              <button class="btn-delete" type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <!-- ADD MARKS BUTTON -->
+    <a href="/add-marks/<%= student.id %>?email=<%= teacherEmail %>" class="btn-add">+ Add Marks</a>
+
+    <!-- CORRECT BACK BUTTON -->
+    <a href="/teacher-login?email=<%= teacherEmail %>" class="btn-back">Back</a>
+  </div>
+</div>
+
+</body>
+</html>

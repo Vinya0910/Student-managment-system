@@ -1,0 +1,60 @@
+/* ============ Page Layout ============ */
+body {
+    background: #f4f7ff;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    color: #1a3cff;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* ============ Styled Table ============ */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+}
+
+.styled-table thead tr {
+    background-color: #1a3cff;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 20px;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f3f6ff;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #e4ecff;
+}
+
+/* ============ Status Colors ============ */
+.present {
+    font-weight: bold;
+    color: #1a9c40;
+}
+
+.absent {
+    font-weight: bold;
+    color: #d62828;
+}

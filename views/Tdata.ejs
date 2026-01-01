@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Teachers — MySchool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/tdata.css">
+</head>
+
+<body>
+
+<div class="teacher-container">
+
+    <h1 class="title">All Teacher Details</h1>
+
+    <!-- ⭐ ADD NEW TEACHER BUTTON -->
+    <div style="text-align: right; margin-bottom: 15px;">
+        <a href="/add-teacher" class="btn-add">+ Add New Teacher</a>
+    </div>
+
+    <div class="card">
+
+        <div class="table-wrapper">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Department</th>
+                        <th>Actions</th> <!-- ⭐ NEW COLUMN -->
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% teachers.forEach(t => { %>
+                        <tr>
+                            <td><%= t.id %></td>
+                            <td><%= t.name %></td>
+                            <td><%= t.email %></td>
+                            <td><%= t.password %></td>
+                            <td><%= t.department %></td>
+
+                            <td>
+                                <!-- ⭐ VIEW BUTTON -->
+                                <a href="/teacher-details/<%= t.id %>" class="btn-view">View</a>
+
+                                <!-- ⭐ EDIT BUTTON -->
+                                <a href="/edit-teacher/<%= t.id %>" class="btn-edit">Edit</a>
+
+                                <!-- ⭐ DELETE BUTTON -->
+                                <form action="/delete-teacher/<%= t.id %>" method="POST" style="display:inline;"
+                                      onsubmit="return confirm('Are you sure you want to delete this teacher?');">
+                                    <button class="btn-delete" type="submit">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+
+            </table>
+        </div>
+
+        <a href="/admin-back" class="btn-back">Back to Admin Dashboard</a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

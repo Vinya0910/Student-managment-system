@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #eef2f7;
+    font-family: "Inter", sans-serif;
+}
+
+/* Center wrapper */
+.teacher-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* Card */
+.teacher-card {
+    width: 420px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+/* Heading */
+.teacher-card h2 {
+    margin: 0;
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+/* Info box */
+.info-box p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.info-box strong {
+    color: #374151;
+}
+
+/* Back button */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    text-decoration: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.btn-back:hover {
+    background: #1d4ed8;
+}

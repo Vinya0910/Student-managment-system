@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Dashboard — MySchool</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/teacher.css">
+</head>
+
+<body>
+
+<div class="teacher-container">
+
+    <!-- Avatar -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+             alt="Teacher Avatar"
+             width="130"
+             style="border-radius: 50%;" />
+    </div>
+
+    <h1 class="title"><%= teacher.name %> — Dashboard</h1>
+
+    <!-- TOP ACTION BUTTONS -->
+    <div class="actions">
+        <a href="/teacher-details/<%= teacher.id %>" class="btn-primary">
+            View My Details
+        </a>
+
+        <a href="/teacher-attendance?dept=<%= teacher.department %>&email=<%= teacher.email %>" 
+           class="btn-primary">
+            Mark Attendance
+        </a>
+
+        <a href="/teacher-attendance-report?dept=<%= teacher.department %>&email=<%= teacher.email %>"
+           class="btn-secondary">
+            View Attendance Report
+        </a>
+    </div>
+
+    <!-- STUDENT LIST CARD -->
+    <div class="card">
+        <h2>Department Students</h2>
+
+        <div class="table-wrapper">
+            <table class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Department</th>
+                        <th>Courses</th>
+                        <th>View</th>
+                        <th>Add Marks</th>
+                        <th>View Marks</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% students.forEach(student => { %>
+                    <tr>
+                        <td><%= student.id %></td>
+                        <td><%= student.name %></td>
+                        <td><%= student.email %></td>
+                        <td><%= student.password %></td>
+                        <td><%= student.department %></td>
+                        <td><%= student.courses %></td>
+
+                        <!-- VIEW STUDENT -->
+                        <td>
+                            <a class="btn-link view" href="/view/<%= student.id %>">
+                                View
+                            </a>
+                        </td>
+
+                        <!-- ADD MARKS (includes teacher email) -->
+                        <td>
+                            <a class="btn-link view" 
+                               href="/add-marks/<%= student.id %>?email=<%= teacher.email %>">
+                                Add Marks
+                            </a>
+                        </td>
+
+                        <!-- VIEW MARKS (includes teacher email) -->
+                        <td>
+                            <a class="btn-link view"
+                               href="/student-marks/<%= student.id %>?email=<%= teacher.email %>">
+                                View Marks
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

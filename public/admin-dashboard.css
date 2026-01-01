@@ -1,0 +1,126 @@
+/* ============================
+   GLOBAL PAGE STYLING
+============================ */
+body {
+    background: #eef1f7;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;  /* center whole dashboard */
+    align-items: flex-start;
+}
+
+/* ============================
+   MAIN DASHBOARD WRAPPER
+============================ */
+.dashboard {
+    width: 600px;              /* wider so it looks centered and clean */
+    padding: 25px 20px;
+    margin-top: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;       /* center all inner items */
+}
+
+/* ============================
+   MAIN HEADING
+============================ */
+.heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+/* ============================
+   STAT CARDS (CENTERED)
+============================ */
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;    /* center horizontally */
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 230px;               
+    text-align: center;         /* center text */
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #4e73df;
+    margin-top: 8px;
+}
+
+/* ============================
+   CHART SECTION (CENTERED)
+============================ */
+.charts-wrapper {
+    display: flex;
+    flex-direction: row;      /* PIE left, BAR right */
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Chart Box UI */
+.chart-box {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 12px;
+    width: 280px;              
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.12);
+}
+
+.chart-box h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Canvas inside chart box */
+.chart-box canvas {
+    display: block;
+    margin: 0 auto;
+}
+
+/* ============================
+   RESPONSIVE FOR MOBILE
+============================ */
+@media (max-width: 600px) {
+    .dashboard {
+        width: 95%;
+    }
+
+    .charts-wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .chart-box,
+    .card {
+        width: 90%;
+    }
+}

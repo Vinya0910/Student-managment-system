@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard Analytics</title>
+    <link rel="stylesheet" href="/admin-dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1 class="heading">Admin Analytics</h1>
+
+        <!-- STAT CARDS -->
+        <div class="cards-container">
+            <div class="card">
+                <h3>Total Students</h3>
+                <p class="number"><%= studentCount %></p>
+            </div>
+
+            <div class="card">
+                <h3>Total Teachers</h3>
+                <p class="number"><%= teacherCount %></p>
+            </div>
+        </div>
+
+        <!-- CHART SECTION -->
+        <div class="charts-wrapper">
+
+            <div class="chart-box">
+                <h3>Student vs Teacher Ratio</h3>
+                <canvas id="pieChart" width="180" height="180"></canvas>
+            </div>
+
+            <div class="chart-box">
+                <h3>Analytics Overview</h3>
+                <canvas id="barChart" width="220" height="180"></canvas>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        const studentCount = Number("<%= studentCount %>") || 0;
+        const teacherCount = Number("<%= teacherCount %>") || 0;
+
+        new Chart(document.getElementById("pieChart"), {
+            type: "pie",
+            data: {
+                labels: ["Students", "Teachers"],
+                datasets: [{
+                    data: [studentCount, teacherCount],
+                    backgroundColor: ["#4e73df", "#1cc88a"]
+                }]
+            },
+            options: { responsive: false }
+        });
+
+        new Chart(document.getElementById("barChart"), {
+            type: "bar",
+            data: {
+                labels: ["Students", "Teachers"],
+                datasets: [{
+                    label: "Count",
+                    data: [studentCount, teacherCount],
+                    backgroundColor: ["#36b9cc", "#f6c23e"]
+                }]
+            },
+            options: {
+                responsive: false,
+                scales: { y: { beginAtZero: true } }
+            }
+        });
+    </script>
+
+</body>
+</html>

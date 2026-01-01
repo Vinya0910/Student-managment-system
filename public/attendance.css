@@ -1,0 +1,89 @@
+/* ==========================
+   General Layout
+   ========================== */
+body {
+    background: #f4f7ff;
+    font-family: Arial, sans-serif;
+    padding: 40px;
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 28px;
+    color: #1a3cff;
+    font-weight: bold;
+}
+
+/* ==========================
+   Table Styling
+   ========================== */
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.styled-table thead tr {
+    background-color: #1a3cff;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.styled-table th, 
+.styled-table td {
+    padding: 12px 20px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f6ff;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #e4ecff;
+}
+
+/* ==========================
+   Form Inputs
+   ========================== */
+label {
+    margin-right: 15px;
+    font-size: 15px;
+}
+
+/* ==========================
+   Button Styling
+   ========================== */
+.submit-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background-color: #1a3cff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    transition: 0.2s;
+}
+
+.submit-btn:hover {
+    background-color: #0f2fcc;
+}

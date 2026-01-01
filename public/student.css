@@ -1,0 +1,134 @@
+/* ============================
+   GLOBAL PAGE STYLING
+============================ */
+body {
+    margin: 0;
+    padding: 0;
+    background: #eef2f7;
+    font-family: "Inter", sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Wrapper centers the card */
+.profile-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ============================
+   PROFILE CARD STYLING
+============================ */
+.profile-card {
+    width: 420px;
+    padding: 30px;
+    border-radius: 14px;
+    background: #ffffff;
+    text-align: center;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s ease-in-out;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+/* Hover floating effect */
+.profile-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* Fade-up entrance animation */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================
+   ANIMATED AVATAR (Same as SELECT page)
+============================ */
+.student-avatar-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 18px;
+}
+
+.student-avatar-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+
+    border: 3px solid #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+    /* SAME floating animation as select page */
+    animation: floaty 3.2s ease-in-out infinite;
+
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Hover glow + zoom */
+.student-avatar-pic:hover {
+    transform: scale(1.08);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* Floating animation keyframes */
+@keyframes floaty {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* ============================
+   TEXT & INFO STYLING
+============================ */
+.profile-card h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.info p {
+    margin: 10px 0;
+    font-size: 15px;
+}
+
+.info strong {
+    color: #374151;
+}
+
+/* ============================
+   BACK BUTTON
+============================ */
+.btn-back {
+    display: inline-block;
+    margin-top: 22px;
+    padding: 12px 20px;
+    text-decoration: none;
+    background: #2563eb;
+    color: white;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.btn-back:hover {
+    background: #1e4ed8;
+}

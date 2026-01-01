@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mark Attendance</title>
+  <link rel="stylesheet" href="/attendance.css">
+</head>
+<body>
+
+<div class="container">
+  
+  <h2 class="title">Mark Attendance</h2>
+
+  <form method="POST" action="/teacher-submit-attendance">
+
+    <!-- Hidden department -->
+    <input type="hidden" name="dept" value="<%= students[0].department %>">
+
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+
+      <tbody>
+      <% students.forEach(s => { %>
+        <tr>
+          <td><%= s.id %></td>
+          <td><%= s.name %></td>
+          <td>
+            <label><input type="radio" name="status_<%= s.id %>" value="Present"> Present</label>
+            <label><input type="radio" name="status_<%= s.id %>" value="Absent"> Absent</label>
+          </td>
+        </tr>
+      <% }) %>
+      </tbody>
+    </table>
+
+    <button class="submit-btn" type="submit">Submit Attendance</button>
+
+  </form>
+</div>
+
+</body>
+</html>

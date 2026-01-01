@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Marks — MySchool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/marks.css">
+</head>
+
+<body>
+
+<div class="marks-container">
+
+    <div class="marks-card animate">
+        <h2><%= student.name %> — Marks</h2>
+
+        <div class="marks-list">
+            <% if (marks.length === 0) { %>
+                <p>No marks added yet.</p>
+            <% } else { %>
+                <% marks.forEach(m => { %>
+                    <div class="mark-item">
+                        <strong><%= m.subject %></strong>
+                        <span><%= m.marks %> / 100</span>
+                    </div>
+                <% }) %>
+            <% } %>
+        </div>
+
+        <hr>
+
+        <h3>Percentage: <%= percentage %>%</h3>
+
+        <a href="/student-login?email=<%= student.email %>" class="btn-back">Back</a>
+    </div>
+
+</div>
+
+</body>
+</html>

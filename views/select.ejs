@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Role</title>
+
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: #eef2ff;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            gap: 60px;
+            text-align: center;
+        }
+
+        .avatar-box {
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            color: black;
+        }
+
+        .avatar-box:hover {
+            transform: scale(1.08);
+        }
+
+        .avatar-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: #fff;
+            border: 4px solid #fff;
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+            object-fit: cover;
+        }
+
+        .label {
+            margin-top: 12px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- ADMIN -->
+        <a href="/login" class="avatar-box">
+            <img src="https://img.icons8.com/color/200/administrator-male.png"
+                 class="avatar-img" alt="Admin">
+            <div class="label">Admin</div>
+        </a>
+
+        <!-- TEACHER -->
+        <a href="/login" class="avatar-box">
+            <img src="https://img.icons8.com/color/200/teacher.png"
+                 class="avatar-img" alt="Teacher">
+            <div class="label">Teacher</div>
+        </a>
+
+        <!-- STUDENT -->
+        <a href="/login" class="avatar-box">
+            <img src="https://img.icons8.com/color/200/student-male.png"
+                 class="avatar-img" alt="Student">
+            <div class="label">Student</div>
+        </a>
+
+    </div>
+
+</body>
+</html>

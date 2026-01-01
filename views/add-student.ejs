@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Student — MySchool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/add.css">
+</head>
+
+<body>
+
+<div class="add-wrapper">
+
+    <div class="add-card">
+        <h2>Add New Student</h2>
+
+        <form action="/add-student" method="POST">
+
+            <div class="form-group">
+                <label>ID</label>
+                <input type="number" name="id" required>
+            </div>
+
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="text" name="password" required>
+            </div>
+
+            <!-- ⭐ Department Dropdown -->
+            <div class="form-group">
+                <label>Department</label>
+                <select name="department" id="deptSelect" required>
+                    <option value="">-- Select Department --</option>
+                    <option value="CSE">CSE</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Electronics">Electronics</option>
+                    <option value="Civil">Civil</option>
+                </select>
+            </div>
+
+            <!-- ⭐ Courses auto-filled based on department -->
+            <div class="form-group">
+                <label>Courses</label>
+                <input type="text" name="courses" id="courseInput" placeholder="Auto-filled based on department" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ⭐ JavaScript for auto course fill -->
+<script>
+  document.getElementById("deptSelect").addEventListener("change", function () {
+      const dept = this.value;
+      const courseField = document.getElementById("courseInput");
+
+      let courses = "";
+
+      switch (dept) {
+          case "CSE":
+              courses = "DBMS, OOPS";
+              break;
+          case "Mechanical":
+              courses = "Thermodynamics, Fluid Mechanics";
+              break;
+          case "Electronics":
+              courses = "Digital Electronics, Microprocessors";
+              break;
+          case "Civil":
+              courses = "Structural Engineering, Surveying";
+              break;
+      }
+
+      courseField.value = courses;
+  });
+</script>
+
+</body>
+</html>
